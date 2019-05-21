@@ -518,7 +518,7 @@ int background_w_fld(
         fast, simple, and accurate enough. */
   /** *integral_fld = 3.*((1.+pba->w0_fld+pba->wa_fld)*log(pba->a_today/a) + pba->wa_fld*(a/pba->a_today-1.));*/
   /***integral_fld = 3.*(1.+*w_fld)*log(pba->a_today/a)+2.07867;**/
-  *integral_fld = -log(a/pba->a_today)*3.*(1. + pba->w0_fld - 0.5*dw*(HypTan+1));
+  *integral_fld = -log(a/pba->a_today)*3.*(1. + pba->w0_fld + 0.5*(w1-w0)*(HypTan+1));
 
   /** note: of course you can generalise these formulas to anything,
       defining new parameters pba->w..._fld. Just remember that so
